@@ -1,0 +1,245 @@
+
+:root {
+  --bg: #0f1720;
+  --card: #0b1220;
+  --accent: #c0392b;
+  --text-light: #ddd;
+  --shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: #fff;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #08101a;
+  box-shadow: var(--shadow);
+}
+
+header .brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: var(--text-light);
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: var(--accent);
+}
+
+.lang-switch button {
+  margin-left: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--text-light);
+  border: 1px solid #222;
+  transition: background 0.3s ease;
+}
+.lang-switch button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)),
+              url('../images/morocco2.jpg') center/cover no-repeat;
+  color: #fff;
+}
+
+.map-section {
+  padding: 30px;
+}
+
+#map {
+  height: 450px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+#map:hover {
+  transform: scale(1.01);
+}
+
+.infoBox {
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--card);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.features {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.feature {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 10px;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  padding: 20px;
+}
+
+.place-card {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.place-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+.place-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px;
+  justify-content: center;
+}
+.gallery img {
+  width: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.auth {
+  max-width: 360px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.auth input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 0;
+  outline: none;
+}
+
+button {
+  background: var(--accent);
+  border: 0;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+  background: #e74c3c;
+  transform: scale(1.05);
+}
+
+.big-img {
+  width: 80%;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 700px) {
+  .features {
+    flex-direction: column;
+  }
+}
+main h1, main p {
+  text-align: center;
+}
+
+.gallery img {
+  transition: transform 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+.about-more {
+  text-align: center;
+  padding: 20px;
+}
+.about-more p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+}
+.about-more .gallery {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.about-more .gallery img {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* يوسّط المحتوى أفقياً */
+  justify-content: center;   /* يوسّط المحتوى عمودياً */
+  text-align: center;
+  min-height: 80vh;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;   /* يوسّط البطاقات */
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.service-card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}

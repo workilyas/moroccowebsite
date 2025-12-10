@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-i18n="site_title">بوابة المغرب</title>
+<link rel="stylesheet" href="css/style.css">
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+<header>
+<div class="brand">🏛️ <span data-i18n="site_title">بوابة المغرب</span></div>
+<nav>
+<a href="index.html" data-i18n="nav_home">الرئيسية</a>
+<a href="places.html" data-i18n="nav_places">المناطق</a>
+<a href="gallery.html" data-i18n="nav_gallery">الصور</a>
+<a href="about.html" data-i18n="nav_about">عن المغرب</a>
+<a href="learn more.html" data-i18n="nav_contact">تعرف المزيد عن المغرب</a>
+<a href="contact.html" data-i18n="nav_contact">للتواصل</a>
+<a href="services.html" data-i18n="nav_services">خدمة العملاء</a>
+<a href="login.html" data-i18n="nav_login">تسجيل/دخول</a>
+<a href="register.html" data-i18n="nav_contact">معلومات الحساب</a>
+</nav>
+<div class="lang-switch">
+  <button onclick="setLang('ar')">AR</button>
+  <button onclick="setLang('fr')">FR</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+</header>
+
+
+<main>
+<section class="hero">
+<h1 data-i18n="hero_title">اكتشف روعة المملكة المغربية</h1>
+<p data-i18n="hero_sub">التاريخ • الحضارة • الطبيعة • الثقافة</p>
+</section>
+
+
+<section class="map-section">
+  <h2 data-i18n="map_title">الخريطة التفاعلية</h2>
+  <div id="map"></div>
+  <div id="infoBox" class="infoBox"></div>
+
+  <!-- روابط مكتبة Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <style>
+    #map {
+      height: 400px;   /* ارتفاع الخريطة */
+      width: 100%;     /* عرض الخريطة */
+    }
+    .infoBox {
+      margin-top: 10px;
+      padding: 10px;
+      background: #f0f0f0;
+    }
+  </style>
+
+  <script>
+    // إنشاء الخريطة داخل div#map
+    var map = L.map('map').setView([31.7917, -7.0926], 6); // إحداثيات وسط المغرب
+
+    // إضافة طبقة الخريطة من OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // لا نضيف أي Marker هنا
+  </script>
+</section>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/@panzoom/panzoom/dist/panzoom.min.js"></script>
+
+<script>
+  if (navigator.onLine) {
+    // إذا فيه نت → اعرض خريطة Leaflet
+    var map = L.map('map').setView([31.7917, -7.0926], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+  } else {
+    // إذا ما فيه نت → اعرض صورة المغرب
+    var mapDiv = document.getElementById('map');
+    var img = document.createElement('img');
+    img.src = "images/morocco-map.jpg"; // ضع صورة المغرب هنا داخل مجلد images
+    mapDiv.appendChild(img);
+
+    // تفعيل التكبير/التصغير على الصورة
+    const panzoom = Panzoom(img, {
+      maxScale: 5,
+      minScale: 1
+    });
+    mapDiv.addEventListener('wheel', panzoom.zoomWithWheel);
+  }
+</script>
+
+
+<section class="features">
+<div class="feature">
+<h3 data-i18n="feat_history">تاريخ عريق</h3>
+<p data-i18n="feat_history_p">مدن عريقة، آثار وتراث غني.</p>
+</div>
+<div class="feature">
+<h3 data-i18n="feat_nature">طبيعة متنوعة</h3>
+<p data-i18n="feat_nature_p">جبال، سواحل وصحراء ساحرة.</p>
+</div>
+<div class="feature">
+<h3 data-i18n="feat_food">مطبخ لذيذ</h3>
+<p data-i18n="feat_food_p">الطاجين، الكسكس والمأكولات المحلية.</p>
+</div>
+</section>
+</main>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/map.js"></script>
+<script src="js/i18n.js"></script>
+</body>
+</html>

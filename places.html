@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-i18n="places_title">مناطق المغرب</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+<header>
+<a href="index.html" data-i18n="back">العودة</a>
+</header>
+<main>
+<h1 data-i18n="places_title">مناطق المغرب</h1>
+<div class="places-grid">
+<div class="place-card" onclick="focusCity('marrakech')">
+<img src="images/marrakech.jpg" alt="مراكش">
+<h3 data-i18n="marrakech">مراكش</h3>
+</div>
+
+
+<div class="place-card" onclick="focusCity('chefchaouen')">
+<img src="images/chefchaouen.jpg" alt="شفشاون">
+<h3 data-i18n="chefchaouen">شفشاون</h3>
+</div>
+
+
+<div class="place-card" onclick="focusCity('casablanca')">
+<img src="images/casablanca.jpg" alt="الدار البيضاء">
+<h3 data-i18n="casablanca">الدار البيضاء</h3>
+</div>
+
+
+<div class="place-card" onclick="focusCity('rabat')">
+<img src="images/rabat.jpg" alt="الرباط">
+<h3 data-i18n="rabat">الرباط</h3>
+</div>
+</div>
+</main>
+
+
+<script src="js/map.js"></script>
+<script src="js/i18n.js"></script>
+</body>
+</html>
