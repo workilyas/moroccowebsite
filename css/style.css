@@ -243,3 +243,39 @@ main h1, main p {
   box-shadow: var(--shadow);
   text-align: center;
 }
+/* لتوسيط النموذج عمودياً + أفقياً داخل الشاشة */
+.page-center {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+/* Reveal from bottom animation */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 450ms cubic-bezier(.22,.9,.31,1), opacity 450ms ease;
+}
+
+.reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* لمسة إضافية: تأثير ظلال عند الظهور */
+.reveal-item.revealed {
+  box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+}
+/* Reveal from bottom animation */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 450ms cubic-bezier(.22,.9,.31,1), opacity 450ms ease;
+}
+
+.reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+}
